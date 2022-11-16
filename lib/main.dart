@@ -171,9 +171,30 @@ class _pageAState extends State<pageA> {
         title: Text('Page A'),
       ),
       body: Center(
-          child: ElevatedButton(
-            onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=>pageB())); },
-            child: Text('Page B'),)
+         child: Column(
+           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+           children: [
+             Container(
+               height: 180,
+               width: 360,
+               color : Colors.green[200],
+             ),
+             Container(
+               height: 180,
+               width: 360,
+               color : Colors.green[300],
+             ),
+             Container(
+               height: 180,
+               width: 360,
+               color : Colors.green[400],
+             ),
+             ElevatedButton(
+               onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=>pageB())); },
+               child: Text('Page B'),)
+
+           ],
+         ),
       ),
     );
   }
@@ -198,9 +219,40 @@ class _pageBState extends State<pageB> {
         title: Text('Page B'),
       ),
       body: Center(
-          child: ElevatedButton(
-            onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=>pageC())); },
-            child: Text('Page C'),)
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              child: Center(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        color : Colors.red,
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        color : Colors.green,
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        color : Colors.yellow[400],
+                      ),
+                    ]
+                ),
+
+              ),
+            ),
+            ElevatedButton(
+              onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=>pageC())); },
+              child: Text('Page C'),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -213,6 +265,9 @@ class pageC extends StatefulWidget {
 }
 
 class _pageCState extends State<pageC> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -224,9 +279,50 @@ class _pageCState extends State<pageC> {
         title: Text('Page C'),
       ),
       body: Center(
-          child: ElevatedButton(
-            onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage())); },
-            child: Text('Sign out'),)
+        child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color : Colors.red,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color : Colors.green,
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          color : Colors.yellow[400],
+                        ),
+
+                      ]
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 180,
+                  width: 360,
+                  color : Colors.blue[200],
+                ),
+                Container(
+                  height: 180,
+                  width: 360,
+                  color : Colors.blue[300],
+                ),
+               ElevatedButton(
+                    onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage())); },
+                    child: Text('Sign out'),
+               ),
+              ],
+            ),
       ),
     );
   }
